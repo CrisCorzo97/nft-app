@@ -23,7 +23,26 @@ export const FONTS = {
   light: "InterLight",
 };
 
-export const SHADOWS = {
+type ShadowOffset = {
+  width: number;
+  height: number;
+};
+
+export type ShadowType = {
+  shadowColor: string;
+  shadowOffset: ShadowOffset;
+  shadowOpacity: number;
+  shadowRadius: number;
+  elevation: number;
+};
+
+type Shadows = {
+  light: ShadowType;
+  medium: ShadowType;
+  dark: ShadowType;
+};
+
+export const SHADOWS: Shadows = {
   light: {
     shadowColor: COLORS.gray,
     shadowOffset: {

@@ -1,11 +1,13 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { COLORS, FONTS, SHADOWS, SIZES } from "../constants";
+import { ShadowType } from "../constants/theme";
 
 interface CircleButtonProps {
   imgUrl: string;
   handlePress: () => void;
-  right: number;
-  top: number;
+  right?: number;
+  top?: number;
+  left?: number;
 }
 
 export const CircleButton = ({
@@ -13,6 +15,7 @@ export const CircleButton = ({
   handlePress,
   right,
   top,
+  left,
 }: CircleButtonProps) => {
   return (
     <TouchableOpacity
@@ -26,6 +29,7 @@ export const CircleButton = ({
         justifyContent: "center",
         top: top,
         right: right,
+        left: left,
         ...SHADOWS.light,
       }}
       onPress={handlePress}
@@ -43,12 +47,14 @@ interface RectButtonProps {
   minWidth: number;
   fontSize: number;
   handlePress: () => void;
+  shadow?: ShadowType;
 }
 
 export const RectButton = ({
   minWidth,
   fontSize,
   handlePress,
+  shadow,
 }: RectButtonProps) => {
   return (
     <TouchableOpacity
@@ -57,6 +63,11 @@ export const RectButton = ({
         borderRadius: SIZES.extraLarge,
         minWidth: minWidth,
         padding: SIZES.small,
+        shadowColor: shadow?.shadowColor,
+        shadowOffset: shadow?.shadowOffset,
+        shadowOpacity: shadow?.shadowOpacity,
+        shadowRadius: shadow?.shadowRadius,
+        elevation: shadow?.elevation,
       }}
       onPress={handlePress}
     >
