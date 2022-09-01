@@ -1,8 +1,7 @@
-import { View, Image, Text } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { View, Image } from "react-native";
 
 import { COLORS, SIZES, SHADOWS, assets } from "../constants";
-import { NFT, Bids } from "../constants/dummy";
+import { NFT } from "../constants/dummy";
 import { CircleButton, RectButton } from "./Button";
 import { SubInfo, EthPrice, NFTTitle } from "./SubInfo";
 
@@ -18,7 +17,7 @@ const NFTCard: React.FC<Props> = ({ data, navigation }) => {
     <View
       style={{
         backgroundColor: COLORS.white,
-        borderRadius: SIZES.font,
+        borderRadius: SIZES.extraLarge,
         marginBottom: SIZES.extraLarge,
         margin: SIZES.base,
         ...SHADOWS.dark,
@@ -31,8 +30,8 @@ const NFTCard: React.FC<Props> = ({ data, navigation }) => {
           style={{
             width: "100%",
             height: "100%",
-            borderTopLeftRadius: SIZES.font,
-            borderTopRightRadius: SIZES.font,
+            borderTopLeftRadius: SIZES.extraLarge,
+            borderTopRightRadius: SIZES.extraLarge,
           }}
         />
         <CircleButton
@@ -43,7 +42,7 @@ const NFTCard: React.FC<Props> = ({ data, navigation }) => {
         />
       </View>
 
-      <SubInfo />
+      <SubInfo endDate={data.endDate} />
 
       <View style={{ width: "100%", padding: SIZES.font }}>
         <NFTTitle

@@ -90,7 +90,7 @@ const Details: React.FC<DetailsProps> = ({ navigation, route }) => {
         ListHeaderComponent={() => (
           <React.Fragment>
             <DetailsHeader data={data} navigation={navigation} />
-            <SubInfo />
+            <SubInfo endDate={data.endDate} />
             <View style={{ padding: SIZES.font }}>
               <DetailsDesc data={data} />
 
