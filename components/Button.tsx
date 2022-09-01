@@ -59,7 +59,7 @@ export const RectButton = ({
   return (
     <TouchableOpacity
       style={{
-        backgroundColor: COLORS.primary,
+        backgroundColor: COLORS.secondary,
         borderRadius: SIZES.extraLarge,
         minWidth: minWidth,
         padding: SIZES.small,
@@ -75,7 +75,7 @@ export const RectButton = ({
         style={{
           fontFamily: FONTS.semiBold,
           fontSize: fontSize,
-          color: COLORS.white,
+          color: COLORS.gray,
           textAlign: "center",
         }}
       >

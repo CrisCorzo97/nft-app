@@ -7,7 +7,6 @@ import {
   StatusBar,
   FlatList,
 } from "react-native";
-
 import {
   CircleButton,
   RectButton,
@@ -16,7 +15,8 @@ import {
   DetailsDesc,
   DetailsBid,
 } from "../components";
-import { assets, SHADOWS, SIZES } from "../constants";
+import { assets, COLORS, FONTS, SHADOWS, SIZES } from "../constants";
+import { NFT } from "../constants/dummy";
 
 interface DetailsProps {
   navigation: any;
@@ -27,7 +27,7 @@ const DetailsHeader = ({
   data,
   navigation,
 }: {
-  data: any;
+  data: NFT;
   navigation: any;
 }) => (
   <View style={{ width: "100%", height: 373 }}>
@@ -52,12 +52,12 @@ const DetailsHeader = ({
 );
 
 const Details: React.FC<DetailsProps> = ({ navigation, route }) => {
-  const { data } = route.params;
+  const { data }: { data: NFT } = route.params;
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusedStatusBar
-        barStyle="dark-content"
+        barStyle="light-content"
         background="transparent"
         translucent={true}
       />
@@ -91,7 +91,21 @@ const Details: React.FC<DetailsProps> = ({ navigation, route }) => {
           <React.Fragment>
             <DetailsHeader data={data} navigation={navigation} />
             <SubInfo />
-            <View style={{ padding: SIZES.font }}></View>
+            <View style={{ padding: SIZES.font }}>
+              <DetailsDesc data={data} />
+
+              {data.bids.length > 0 && (
+                <Text
+                  style={{
+                    fontSize: SIZES.font,
+                    fontFamily: FONTS.semiBold,
+                    color: COLORS.black,
+                  }}
+                >
+                  Current Bid
+                </Text>
+              )}
+            </View>
           </React.Fragment>
         )}
       />

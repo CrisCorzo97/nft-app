@@ -20,7 +20,7 @@ export const NFTTitle = ({
         style={{
           fontFamily: FONTS.semiBold,
           fontSize: titleSize,
-          color: COLORS.primary,
+          color: COLORS.black,
         }}
       >
         {title}
@@ -29,7 +29,7 @@ export const NFTTitle = ({
         style={{
           fontFamily: FONTS.regular,
           fontSize: subtitleSize,
-          color: COLORS.primary,
+          color: COLORS.gray,
         }}
       >
         {subtitle}
@@ -48,7 +48,7 @@ export const EthPrice = ({ price }: { price: number }) => {
       />
       <Text
         style={{
-          fontFamily: FONTS.medium,
+          fontFamily: FONTS.bold,
           fontSize: SIZES.font,
           color: COLORS.primary,
         }}
@@ -113,7 +113,7 @@ export const EndDate = () => {
         style={{
           fontFamily: FONTS.regular,
           fontSize: SIZES.small,
-          color: COLORS.primary,
+          color: COLORS.gray,
           textAlign: "center",
         }}
       >

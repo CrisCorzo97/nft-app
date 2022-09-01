@@ -24,8 +24,8 @@ const HomeHeader: React.FC<HomeHeaderProps> = ({ onSearch }) => {
           source={assets.logo}
           resizeMode="contain"
           style={{
-            width: 90,
-            height: 25,
+            width: 70,
+            height: "100%",
           }}
         />
 

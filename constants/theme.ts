@@ -1,9 +1,9 @@
 export const COLORS = {
-  primary: "#001F2D",
-  secondary: "#4D626C",
-
-  white: "#FFF",
-  gray: "#74858C",
+  primary: "#7862F8",
+  secondary: "#C8F560",
+  black: "#21251F",
+  white: "#EBF1F1",
+  gray: "#4E515C",
 };
 
 export const SIZES = {
@@ -16,11 +16,11 @@ export const SIZES = {
 };
 
 export const FONTS = {
-  bold: "InterBold",
-  semiBold: "InterSemiBold",
-  medium: "InterMedium",
-  regular: "InterRegular",
-  light: "InterLight",
+  bold: "AlbertSansBold",
+  semiBold: "AlbertSansSemiBold",
+  medium: "AlbertSansMedium",
+  regular: "AlbertSansRegular",
+  light: "AlbertSansLight",
 };
 
 type ShadowOffset = {

@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 
 import Home from "./screens/Home";
 import Details from "./screens/Details";
+import Splash from "./screens/Splash";
 
 const Stack = createStackNavigator();
 
@@ -17,11 +18,11 @@ const theme = {
 
 const App = () => {
   const [loaded] = useFonts({
-    InterBold: require("./assets/fonts/Inter-Bold.ttf"),
-    InterSemiBold: require("./assets/fonts/Inter-SemiBold.ttf"),
-    InterMedium: require("./assets/fonts/Inter-Medium.ttf"),
-    InterRegular: require("./assets/fonts/Inter-Regular.ttf"),
-    InterLight: require("./assets/fonts/Inter-Light.ttf"),
+    AlbertSansBold: require("./assets/fonts/AlbertSans-Bold.ttf"),
+    AlbertSansSemiBold: require("./assets/fonts/AlbertSans-SemiBold.ttf"),
+    AlbertSansMedium: require("./assets/fonts/AlbertSans-Medium.ttf"),
+    AlbertSansRegular: require("./assets/fonts/AlbertSans-Regular.ttf"),
+    AlbertSansLight: require("./assets/fonts/AlbertSans-Light.ttf"),
   });
 
   if (!loaded) return null;
@@ -30,8 +31,9 @@ const App = () => {
     <NavigationContainer theme={theme}>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName="Home"
+        initialRouteName="Splash"
       >
+        <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>
